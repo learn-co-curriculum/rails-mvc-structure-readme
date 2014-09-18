@@ -1,0 +1,2 @@
+rails-mvc-structure-readme
+==========================
