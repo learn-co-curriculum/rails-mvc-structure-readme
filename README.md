@@ -5,39 +5,39 @@ You should be relatively familiar with the Rails file structure having basically
 ```bash
 app_name/
 ├── app
-│   ├── assets
+│   ├── assets # For js and css that you've written
 │   │   ├── images
 │   │   ├── javascripts
-│   │   │   └── application.js
+│   │   │   └── application.js # A manifest file for the asset pipeline
 │   │   └── stylesheets
-│   │       └── application.css
+│   │       └── application.css # A manifest file for the asset pipeline
 │   ├── controllers
-│   │   ├── application_controller.rb
-│   │   └── concerns
-│   ├── helpers
-│   │   └── application_helper.rb
-│   ├── mailers
+│   │   ├── application_controller.rb # From which all controllers inherit from
+│   │   └── concerns # For keeping reusable code that applies to all controllers
+│   ├── helpers # For view helper modules
+│   │   └── application_helper.rb 
+│   ├── mailers # For code pertaining to sending emails
 │   ├── models
-│   │   └── concerns
+│   │   └── concerns # For keeping reusable code that applies to all models
 │   └── views
 │       └── layouts
-│           └── application.html.erb
-├── bin
+│           └── application.html.erb # For HTML that will be on all web pages. <head> tag for example
+├── bin # Rails command line tools; we have a few extras with flatiron-rails
 │   ├── bundle
 │   ├── rails
 │   ├── rake
 │   ├── setup
 │   └── spring
-├── config
-│   ├── application.rb
-│   ├── boot.rb
-│   ├── database.yml
-│   ├── environment.rb
-│   ├── environments
+├── config # Configuration code
+│   ├── application.rb # Loads rails gems, gems for the specified Rail.env, and configures the application
+│   ├── boot.rb # Sets up Bundler and load paths
+│   ├── database.yml # Database configuration
+│   ├── environment.rb # Runs all initializers
+│   ├── environments # Settings for specific environments, production, testing, development, etc. 
 │   │   ├── development.rb
 │   │   ├── production.rb
 │   │   └── test.rb
-│   ├── initializers
+│   ├── initializers # These configuration files load after the framework and gems
 │   │   ├── assets.rb
 │   │   ├── backtrace_silencers.rb
 │   │   ├── cookies_serializer.rb
@@ -46,35 +46,32 @@ app_name/
 │   │   ├── mime_types.rb
 │   │   ├── session_store.rb
 │   │   └── wrap_parameters.rb
-│   ├── locales
-│   │   └── en.yml
-│   ├── routes.rb
-│   └── secrets.yml
-├── config.ru
-├── db
+│   ├── locales # For language/international configuration. If you want your app in multiple languages!
+│   │   └── en.yml # English localization file
+│   ├── routes.rb # Where we build our routes for requests to our app
+│   └── secrets.yml # Rails' built in secret key management
+├── config.ru # For Rack-based servers to start the application
+├── db # database files. Migrations, seed files, etc.
 │   └── seeds.rb
-├── lib
+├── lib # External libraries go here
 │   ├── assets
 │   └── tasks
-├── log
-├── public
+├── log # Error logs live here
+├── public # files for the web server that don't change. Static web pages.
 │   ├── 404.html
 │   ├── 422.html
 │   ├── 500.html
 │   ├── favicon.ico
 │   └── robots.txt
-├── test
-│   ├── controllers
-│   ├── fixtures
-│   ├── helpers
-│   ├── integration
-│   ├── mailers
-│   ├── models
-│   └── test_helper.rb
-├── tmp
+├── spec # all tests
+│   ├── feature_helper.rb
+│   ├── features
+│   ├── rails_helper.rb # As of RSpec 3.x this replaces spec_helper
+│   └── spec_helper.rb
+├── tmp # Where Rails holds temporary files for immediate processing
 │   └── cache
 │       └── assets
-├── vendor
+├── vendor # Where we keep third-party assets (like Bootstrap Themes)
 │   └── assets
 │       ├── javascripts
 │       └── stylesheets
