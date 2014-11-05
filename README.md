@@ -1,48 +1,43 @@
 # The Rails File Structure
 
-You should be relatively familiar with the Rails file structure having already built Rails out of Sinatra. Below is the standard file structure, which is automatically generated when you generate a new rails app with `rails new`. Look for comments explaining some new directories and files you may not be familiar with.
+You should be relatively familiar with the Rails file structure having basically built a version of Rails using Sinatra. Below is the standard file structure of a Rails 4.2 app, which is automatically generated when you generate a new rails app with `rails new`. Look for comments explaining some new directories and files you may not be familiar with.
 
 ```bash
-├── Gemfile
-├── Gemfile.lock
-├── Guardfile
-├── README.md
-├── Rakefile
+app_name/
 ├── app
-│   ├── assets # for js and css that you've written
+│   ├── assets
 │   │   ├── images
 │   │   ├── javascripts
-│   │   │   └── application.js a manifest file for the asset pipeline
+│   │   │   └── application.js
 │   │   └── stylesheets
-│   │       └── application.css.scss # a manifest file for the asset pipeline
+│   │       └── application.css
 │   ├── controllers
-│   │   ├── application_controller.rb # from which all controllers inherit from
-│   │   └── concerns # for keeping reusable code that applies to all controllers
-│   ├── helpers # for view helper modules
+│   │   ├── application_controller.rb
+│   │   └── concerns
+│   ├── helpers
 │   │   └── application_helper.rb
-│   ├── mailers # for code pertaining to mailer functionality
+│   ├── mailers
 │   ├── models
-│   │   └── concerns # for keeping reusable code that applies to all models
+│   │   └── concerns
 │   └── views
 │       └── layouts
-│           └── application.html.erb # for wrapping and yielding to views
-├── bin # Rails command line tools; we have a few extras with flatiron-rails
+│           └── application.html.erb
+├── bin
 │   ├── bundle
-│   ├── deploy
 │   ├── rails
 │   ├── rake
 │   ├── setup
 │   └── spring
-├── config # configuration code
-│   ├── application.rb # loads rails gems, gems for the specified Rail.env, and configures the application
-│   ├── boot.rb # sets up Bundler and load paths
-│   ├── database.yml # database configuration
-│   ├── environment.rb # runs all initializers
-│   ├── environments # settings for specific environments
+├── config
+│   ├── application.rb
+│   ├── boot.rb
+│   ├── database.yml
+│   ├── environment.rb
+│   ├── environments
 │   │   ├── development.rb
 │   │   ├── production.rb
 │   │   └── test.rb
-│   ├── initializers # these configuration files load after the framework and gems
+│   ├── initializers
 │   │   ├── assets.rb
 │   │   ├── backtrace_silencers.rb
 │   │   ├── cookies_serializer.rb
@@ -51,36 +46,42 @@ You should be relatively familiar with the Rails file structure having already b
 │   │   ├── mime_types.rb
 │   │   ├── session_store.rb
 │   │   └── wrap_parameters.rb
-│   ├── locales # for language/international configuration
+│   ├── locales
 │   │   └── en.yml
-│   ├── routes.rb # where we build our routes for requests to our app
-│   └── secrets.yml # Rails' built in secret key management
-├── config.ru # for Rack-based servers to start the application
-├── db # db files, migrations, seed files
+│   ├── routes.rb
+│   └── secrets.yml
+├── config.ru
+├── db
 │   └── seeds.rb
-├── lib # external libraries go here
+├── lib
 │   ├── assets
 │   └── tasks
-├── log # Error logs live here
-│   └── development.log
-├── public # files for the web server that don't change
+├── log
+├── public
 │   ├── 404.html
 │   ├── 422.html
 │   ├── 500.html
 │   ├── favicon.ico
 │   └── robots.txt
-├── spec # all tests
-│   ├── feature_helper.rb
-│   ├── features
-│   ├── rails_helper.rb # as of RSpec 3.x this replaces spec_helper
-│   └── spec_helper.rb
-├── tmp # where Rails holds temporary files for immediate processing
+├── test
+│   ├── controllers
+│   ├── fixtures
+│   ├── helpers
+│   ├── integration
+│   ├── mailers
+│   ├── models
+│   └── test_helper.rb
+├── tmp
 │   └── cache
 │       └── assets
-└── vendor # where we keep third-party assets (like Bootstrap Themes)
-    └── assets
-        ├── javascripts
-        └── stylesheets
+├── vendor
+│   └── assets
+│       ├── javascripts
+│       └── stylesheets
+├── Gemfile
+├── Gemfile.lock
+├── README.rdoc
+└── Rakefile
 ```
 
 ## Resources
