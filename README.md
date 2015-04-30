@@ -81,6 +81,3 @@ app_name/
 └── Rakefile
 ```
 
-## Resources
-
-* [The Rails 4 Way, Chapter 1: Rails Environments and Configuration](http://beta-library.herokuapp.com/books/the-rails-4-way#page=24)
