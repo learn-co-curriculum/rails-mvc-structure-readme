@@ -2,6 +2,10 @@
 
 You should be relatively familiar with the Rails file structure having basically built a version of Rails using Sinatra. Below is the standard file structure of a Rails 4.2 app, which is automatically generated when you generate a new rails app with `rails new`. Look for comments explaining some new directories and files you may not be familiar with.
 
+This is a test. 
+
+
+
 ```bash
 app_name/
 ├── app
